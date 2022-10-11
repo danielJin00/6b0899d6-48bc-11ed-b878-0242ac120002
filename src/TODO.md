@@ -1,0 +1,5 @@
+- sort dates 
+- datums müssen sticky sein
+- search 
+- basket 
+- google maps
