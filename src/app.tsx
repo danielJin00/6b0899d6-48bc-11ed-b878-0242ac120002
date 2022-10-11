@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import EventCard from "./components/EventCard/EventCard";
-
-import { mutateData as sortDataByDate } from "./helpers";
+import { mutateData as sortDataByDate } from "./dataHelpers";
 import { fetchEvents } from "./services/parties.api";
 import { MutatedData } from "./types";
 
+
 export default function App() {
+  //Dates only
   const [dates, setDates] = useState<string[] | null>();
+  //sorted Data
   const [sortedData, setsortedData] = useState<MutatedData | null>();
+  //search
+  const [query, setQuery] = useState(" ");
 
   useEffect(() => {
     fetchEvents()
@@ -20,23 +24,24 @@ export default function App() {
       .catch(console.error);
   }, []);
 
-  //Sort Date
-  //1. map dates
-  //2. map array
-  //
-
+  
   // Rule 1: React functional component ALWAYS returns a JSX (HTML)
   return (
     <>
       {/* Rule 2 : JS logic inside {} */}
 
+      <input type="text" placeholder="Search..."
+      onChange= {e => setQuery(e.target.value)}/> 
+
       {sortedData &&
         dates?.map((date) => {
           return (
             <>
-              <h1> {date}</h1>
+              <h1> {date} </h1>
               <div className="flex-container">
-                {sortedData[date].map((event) => (
+                {sortedData[date].filter(item =>
+                item.title.toLowerCase().includes(query.toLowerCase())
+                ).map((event) => (
                   <div className="child">
                     <EventCard party={event} />
                   </div>
@@ -48,3 +53,4 @@ export default function App() {
     </>
   );
 }
+

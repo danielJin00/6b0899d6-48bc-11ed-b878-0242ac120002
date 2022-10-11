@@ -45,4 +45,5 @@ export interface MutatedData {
     [key:string]:Party[]
     }
 
+
     export interface EventCardProps{party:Party}
