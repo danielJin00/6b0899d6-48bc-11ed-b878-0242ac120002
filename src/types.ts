@@ -1,6 +1,6 @@
 
 
-export interface Party {
+export interface Event {
     _id:        string;
     title:      string;
     flyerFront: string;
@@ -16,6 +16,7 @@ export interface Party {
     country:    string;
     private:    boolean;
     __v:        number;
+    inCart?:     boolean;
 }
 
 export interface Artist {
@@ -40,10 +41,3 @@ export interface Venue {
     live:       boolean;
     direction:  string;
 }
-
-export interface MutatedData {
-    [key:string]:Party[]
-    }
-
-
-    export interface EventCardProps{party:Party}

@@ -1,13 +1,5 @@
 
-- basket 
-- event
-styling 
-- eventcards richtig formatieren
+- styling 
+- position
 - datums müssen sticky sein
-- rest
 
-bonus 
-- advanced search (e.g.location)
-- placeholder flyerimg
-- remove item from basket
-- favouriten markieren

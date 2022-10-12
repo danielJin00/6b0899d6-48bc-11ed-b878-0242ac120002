@@ -1,9 +1,9 @@
-import { Party } from "../types"
+import { Event } from "../types"
 
 const API_URL= 'https://tlv-events-app.herokuapp.com/events/uk/london' 
 
 
-export async function fetchEvents(): Promise<Party[]> {
+export async function fetchEvents(): Promise<Event[]> {
     
     try {
         const response  = await fetch(API_URL)
