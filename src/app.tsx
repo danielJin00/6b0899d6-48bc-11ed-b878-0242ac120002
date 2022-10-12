@@ -25,10 +25,8 @@ export default function App() {
             .catch(console.error);
     }, []);
 
-    // Rule 1: React functional component ALWAYS returns a JSX (HTML)
     return (
         <>
-            {/* Rule 2 : JS logic inside {} */}
             <Header
                 setQuery={setQuery}
                 setSortedData={setSortedData}
