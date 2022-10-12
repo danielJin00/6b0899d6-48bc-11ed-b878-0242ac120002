@@ -14,7 +14,6 @@ export default function App() {
     const [query, setQuery] = useState(" ");
 
     //formate date
-    
     useEffect(() => {
         fetchEvents()
             .then((Response) => {
@@ -26,26 +25,30 @@ export default function App() {
             .catch(console.error);
     }, []);
 
-
     // Rule 1: React functional component ALWAYS returns a JSX (HTML)
     return (
         <>
             {/* Rule 2 : JS logic inside {} */}
-
             <Header
                 setQuery={setQuery}
                 setSortedData={setSortedData}
                 sortedData={sortedData}
             />
             
+            <div className="cardbody">
             {sortedData &&
                 dates?.map((date) => {
+                    //formate Date
                     const splittedDate= date.split(/[-,T]/);
-                    const formatedDate = (new Date(parseInt(splittedDate[0]),parseInt(splittedDate[1])-1,parseInt(splittedDate[2]))).toString()
+                    const tempformatedDate = (new Date(parseInt(splittedDate[0]),parseInt(splittedDate[1])-1,parseInt(splittedDate[2]))).toString()
+                    const stringFormatedDate = tempformatedDate.split(' ')
+                    const formatedDate = (stringFormatedDate.splice(0,4)).join(" ")
+
                     return (
                         <>
-                            <h1 className="sticky-div"> {formatedDate} </h1>
-                            <div className="flex-container">
+                            <h1 className="sticky-div">  {formatedDate} </h1>
+                            <div className="dateEvent-container">
+                            
                                 {sortedData
                                     //event in cart
                                     .filter(
@@ -61,6 +64,7 @@ export default function App() {
                                     .map(
                                         (event) =>
                                             !event.inCart && (
+                                                <div className="singleEvent">
                                                 <EventCard
                                                     event={event}
                                                     sortedData={sortedData}
@@ -68,12 +72,15 @@ export default function App() {
                                                         setSortedData
                                                     }
                                                 />
+                                                </div>
                                             )
                                     )}
                             </div>
+                            
                         </>
                     );
                 })}
+                </div>
         </>
         
     );

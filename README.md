@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+
+TECLEAD EVENT PROJECT by Daniel Jin Wodke
+
+This app allows the user to brows through all the events fetched by the given API. 
+
+Features:
+- UI Library is Bootsstrap React : https://react-bootstrap.github.io/ 
+- The dates are sorted and stick to the top of the screen,
+- There is a Search component which allows the user to find events by title
+- Once found, the user can put the event into a basket and also remove it again from the basket 
+- All events in the basket are removed from the mainpage and can be viewed in a sidebar
+- On every eventcard is the location which can be interacted with and opens a google maps location in a seperate tab
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -31,10 +43,3 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.

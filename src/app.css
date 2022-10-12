@@ -3,20 +3,31 @@
     box-sizing: border-box;
     border-width: 0;
 }
-h1{
+
+.cardbody {
+    margin: 15px 10%;
+}
+
+.sticky-div{
     text-align: center;
     position: sticky;
-    top: 0;
-    background-color: white;
+    top: 4rem;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
 }
-.sticky-dev{
-    position: sticky;
-    top: 0;
 
-}
-.flex-container{
+
+.dateEvent-container{
+    margin-left: 10%;
+    
     display: flex;
-    justify-content: space-between;
-    margin: 5px 10%;
-    height: 50%;
+    flex-wrap: wrap;
+    
+    justify-content: flex-start;
+}
+
+.dateEvent-container > div {
+    margin: 10px 20px;
 }

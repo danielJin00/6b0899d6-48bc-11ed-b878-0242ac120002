@@ -8,23 +8,22 @@ function EventCard(props: {
     sortedData: Event[] | null;
 }) {
     //get time from date
-    function setStart(){
-        if (!props.event.startTime){
+    function setStart() {
+        if (!props.event.startTime) {
             return null;
         } else {
-            const Start =
-        props.event.startTime?.split(/[T,.]/);
-            return Start[1]
+            const Start = props.event.startTime?.split(/[T,.]/);
+            return Start[1];
         }
-    } 
-    function setEnd(){
-        if (!props.event.endTime){
+    }
+    function setEnd() {
+        if (!props.event.endTime) {
             return null;
         } else {
             const End = props.event.endTime?.split(/[T,.]/);
-            return End[1]
+            return End[1];
         }
-    }   
+    }
 
     return (
         <div className="child">
