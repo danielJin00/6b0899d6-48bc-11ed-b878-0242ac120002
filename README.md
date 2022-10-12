@@ -1,6 +1,8 @@
 
 TECLEAD EVENT PROJECT by Daniel Jin Wodke
 
+URL : https://danieljin00.github.io/6b0899d6-48bc-11ed-b878-0242ac120002/
+
 This app allows the user to brows through all the events fetched by the given API. 
 
 Features:
